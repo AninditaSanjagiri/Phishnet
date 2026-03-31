@@ -1,0 +1,89 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #080c10;
+  --bg2:        #0d1117;
+  --bg3:        #131920;
+  --border:     #1e2a35;
+  --border2:    #253040;
+  --text:       #c8d8e8;
+  --text2:      #6b8399;
+  --text3:      #3d5568;
+  --accent:     #00e5ff;
+  --accent2:    #0099bb;
+  --danger:     #ff3860;
+  --warn:       #ffb020;
+  --safe:       #00e676;
+  --purple:     #a78bfa;
+  --font-head:  'Syne', sans-serif;
+  --font-body:  'DM Sans', sans-serif;
+  --font-mono:  'DM Mono', monospace;
+  --radius:     6px;
+  --radius-lg:  12px;
+  --glow-danger: 0 0 24px rgba(255,56,96,0.25);
+  --glow-safe:   0 0 24px rgba(0,230,118,0.2);
+  --glow-warn:   0 0 24px rgba(255,176,32,0.2);
+  --glow-accent: 0 0 20px rgba(0,229,255,0.15);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle scan-line texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,229,255,0.012) 2px,
+    rgba(0,229,255,0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* Utility */
+.mono { font-family: var(--font-mono); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--border); }
+  50%       { border-color: var(--accent2); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes bar-fill {
+  from { width: 0%; }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}

@@ -1,0 +1,113 @@
+.url-input-wrap { display: flex; flex-direction: column; gap: 12px; }
+
+.url-form { width: 100%; }
+
+.url-field {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  background: var(--bg2);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.url-field:focus-within {
+  border-color: var(--accent2);
+  box-shadow: var(--glow-accent);
+}
+
+.url-field.loading {
+  animation: pulse-border 1.4s ease-in-out infinite;
+}
+
+.url-prefix {
+  padding: 0 12px 0 18px;
+  color: var(--text3);
+  font-size: 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+}
+
+.url-input {
+  flex: 1;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--accent);
+  font-size: 15px;
+  caret-color: var(--accent);
+  min-width: 0;
+}
+
+.url-input::placeholder { color: var(--text3); }
+.url-input:disabled { opacity: 0.5; }
+
+.url-submit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 24px;
+  background: var(--accent);
+  border: none;
+  color: #000;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.url-submit:hover:not(:disabled) { background: #33eeff; }
+.url-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-arrow { font-size: 16px; }
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,0,0,0.3);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.demo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.demo-label {
+  font-size: 12px;
+  color: var(--text3);
+  flex-shrink: 0;
+}
+
+.demo-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: none;
+  color: var(--text2);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.demo-btn:hover:not(:disabled) {
+  border-color: var(--border2);
+  color: var(--text);
+  background: var(--bg3);
+}
+
+.demo-btn:disabled { opacity: 0.4; cursor: not-allowed; }

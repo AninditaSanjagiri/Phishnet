@@ -1,0 +1,102 @@
+.screenshot-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg2);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.panel-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.gradcam-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.toggle-btn {
+  padding: 5px 12px;
+  background: none;
+  border: none;
+  color: var(--text3);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.04em;
+}
+
+.toggle-btn:hover { background: var(--bg3); color: var(--text2); }
+
+.toggle-btn.active {
+  background: var(--bg3);
+  color: var(--accent);
+}
+
+.screenshot-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+}
+
+.screenshot-img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.gradcam-legend {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  gap: 10px;
+  background: rgba(8,12,16,0.8);
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  backdrop-filter: blur(6px);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text2);
+}
+
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.legend-swatch.hot  { background: #ff3030; }
+.legend-swatch.cold { background: #1a4080; }
+
+.screenshot-caption {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+}

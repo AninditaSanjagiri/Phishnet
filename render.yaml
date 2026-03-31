@@ -1,0 +1,22 @@
+# render.yaml — Render free tier deployment for PhishNet backend
+# Docs: https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: phishnet-backend
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install chromium
+      playwright install-deps chromium
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./phishnet.db
+    healthCheckPath: /health
+    autoDeploy: true
